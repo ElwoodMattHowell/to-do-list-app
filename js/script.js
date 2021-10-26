@@ -32,6 +32,15 @@ function newItem(){
  //Reordering the items:
    $('#list').sortable();
 
+   $('#input').val('');
+
 }
 
-$(document).on('Enter', newItem);
+$('#input').on('keydown', function(e) {
+        if(e.key == 'Enter') {
+            e.preventDefault();
+            newItem();
+         }
+   });
+
+$('#button').on('click', newItem);
